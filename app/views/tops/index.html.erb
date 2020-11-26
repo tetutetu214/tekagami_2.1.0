@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="navbar_title">
+    <h1>Tekagami</h1>
+  </div>
+  <div class="navbar_link">
+    <ul class='lists-right'>
+     <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+        <li><%= link_to '現実と夢', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to '夢への', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'log_out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'log_out', destroy_user_session_path, method: :delete %></li>         
+        <li><%= link_to 'log_out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'info', "#"  %></li>
+        <li><%= link_to 'prof', "#"   %></li>
+        <li><%= link_to 'log_in', new_user_session_path  %></li>
+        <li><%= link_to 'sign_up', new_user_registration_path %></li>
+        <li><%= link_to 'Q & A', "#" %></li>
+      <% end %>
+    </ul>
+</div>
+
+<div class="main_title">
+ <% image_tag "/assets/main.jpg" %>
+<div>
